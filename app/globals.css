@@ -30,10 +30,10 @@
   --input: 214 32% 88%;
   --ring: 262 83% 58%;
 
-  /* Purple accent colors */
-  --color-purple: oklch(65% 0.25 300);
-  --color-purple-light: oklch(75% 0.2 300);
-  --color-purple-dark: oklch(55% 0.3 300);
+  /* Purple accent colors - using HSL for consistency */
+  --color-purple: 263 70% 55%;
+  --color-purple-light: 263 70% 65%;
+  --color-purple-dark: 263 70% 45%;
 
   --radius: 0.5rem;
 }
@@ -68,10 +68,10 @@
   --input: 217 33% 22%;
   --ring: 263 70% 55%;
 
-  /* Purple accent colors for dark mode */
-  --color-purple: oklch(70% 0.25 300);
-  --color-purple-light: oklch(80% 0.2 300);
-  --color-purple-dark: oklch(60% 0.3 300);
+  /* Purple accent colors for dark mode - using HSL for consistency */
+  --color-purple: 263 70% 60%;
+  --color-purple-light: 263 70% 70%;
+  --color-purple-dark: 263 70% 50%;
 }
 
 * {
@@ -91,11 +91,8 @@ html {
 
 /* Focus styles for accessibility */
 *:focus-visible {
-  outline: none;
-  ring: 2px;
-  ring-color: hsl(var(--ring));
-  ring-offset: 2px;
-  ring-offset-color: hsl(var(--background));
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
 }
 
 /* Reduce motion for users who prefer it */
@@ -120,8 +117,8 @@ a:not(.no-hover) {
 }
 
 a:not(.no-hover):hover {
-  color: var(--color-purple);
-  text-decoration-color: var(--color-purple);
+  color: hsl(var(--color-purple));
+  text-decoration-color: hsl(var(--color-purple));
 }
 
 .glass {
@@ -137,7 +134,7 @@ a:not(.no-hover):hover {
   background-image: linear-gradient(
     90deg,
     hsl(var(--primary)),
-    var(--color-purple),
+    hsl(var(--color-purple)),
     hsl(var(--primary))
   );
   background-size: 200% auto;

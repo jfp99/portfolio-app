@@ -43,9 +43,9 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        purple: 'var(--color-purple)',
-        'purple-light': 'var(--color-purple-light)',
-        'purple-dark': 'var(--color-purple-dark)',
+        purple: 'hsl(var(--color-purple))',
+        'purple-light': 'hsl(var(--color-purple-light))',
+        'purple-dark': 'hsl(var(--color-purple-dark))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

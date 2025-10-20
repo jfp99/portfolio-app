@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { PersonStructuredData } from '@/components/StructuredData'
 import { Toaster } from 'sonner'
 import './globals.css'
 
@@ -57,7 +58,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jean-Francois Pruvost - Full Stack Developer Portfolio',
     description: 'Portfolio showcasing modern web applications and innovative projects.',
-    creator: '@yourhandle',
     images: ['/og-image.jpg']
   },
 
@@ -90,18 +90,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#0f172a" />
+        <PersonStructuredData />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
+          forcedTheme={undefined}
         >
           <div className="relative flex min-h-screen flex-col">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main id="main-content" className="flex-1">{children}</main>
             <Footer />
           </div>
           <Toaster richColors position="top-center" />
