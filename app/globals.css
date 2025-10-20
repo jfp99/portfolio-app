@@ -1,34 +1,34 @@
 @import "tailwindcss";
 
 /* Light mode (default) */
-@theme {
-  --color-background: oklch(100% 0 0);
-  --color-foreground: oklch(9% 0.024 285.82);
+:root {
+  --background: 0 0% 98%;
+  --foreground: 222 47% 11%;
 
-  --color-card: oklch(100% 0 0);
-  --color-card-foreground: oklch(9% 0.024 285.82);
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
 
-  --color-popover: oklch(100% 0 0);
-  --color-popover-foreground: oklch(9% 0.024 285.82);
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
 
-  --color-primary: oklch(59% 0.233 264.37);
-  --color-primary-foreground: oklch(98% 0.007 264.54);
+  --primary: 262 83% 58%;
+  --primary-foreground: 0 0% 100%;
 
-  --color-secondary: oklch(96.1% 0.007 264.54);
-  --color-secondary-foreground: oklch(18% 0.019 285.88);
+  --secondary: 210 40% 93%;
+  --secondary-foreground: 222 47% 11%;
 
-  --color-muted: oklch(96.1% 0.007 264.54);
-  --color-muted-foreground: oklch(52% 0.013 256.8);
+  --muted: 210 40% 93%;
+  --muted-foreground: 215 20% 40%;
 
-  --color-accent: oklch(96.1% 0.007 264.54);
-  --color-accent-foreground: oklch(18% 0.019 285.88);
+  --accent: 210 40% 93%;
+  --accent-foreground: 222 47% 11%;
 
-  --color-destructive: oklch(62% 0.257 29.23);
-  --color-destructive-foreground: oklch(98% 0.007 264.54);
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
 
-  --color-border: oklch(91.4% 0.013 256.07);
-  --color-input: oklch(91.4% 0.013 256.07);
-  --color-ring: oklch(59% 0.233 264.37);
+  --border: 214 32% 86%;
+  --input: 214 32% 88%;
+  --ring: 262 83% 58%;
 
   /* Purple accent colors */
   --color-purple: oklch(65% 0.25 300);
@@ -40,49 +40,47 @@
 
 /* Dark mode */
 .dark {
-  @theme {
-    --color-background: oklch(9% 0.024 285.82);
-    --color-foreground: oklch(98% 0.007 264.54);
+  --background: 222 47% 8%;
+  --foreground: 210 40% 98%;
 
-    --color-card: oklch(9% 0.024 285.82);
-    --color-card-foreground: oklch(98% 0.007 264.54);
+  --card: 222 47% 13%;
+  --card-foreground: 210 40% 98%;
 
-    --color-popover: oklch(9% 0.024 285.82);
-    --color-popover-foreground: oklch(98% 0.007 264.54);
+  --popover: 222 47% 13%;
+  --popover-foreground: 210 40% 98%;
 
-    --color-primary: oklch(66% 0.252 266.29);
-    --color-primary-foreground: oklch(18% 0.019 285.88);
+  --primary: 263 70% 55%;
+  --primary-foreground: 0 0% 100%;
 
-    --color-secondary: oklch(26% 0.022 285.94);
-    --color-secondary-foreground: oklch(98% 0.007 264.54);
+  --secondary: 217 33% 20%;
+  --secondary-foreground: 210 40% 98%;
 
-    --color-muted: oklch(26% 0.022 285.94);
-    --color-muted-foreground: oklch(70% 0.015 257.08);
+  --muted: 217 33% 20%;
+  --muted-foreground: 215 20% 70%;
 
-    --color-accent: oklch(26% 0.022 285.94);
-    --color-accent-foreground: oklch(98% 0.007 264.54);
+  --accent: 217 33% 20%;
+  --accent-foreground: 210 40% 98%;
 
-    --color-destructive: oklch(40% 0.178 29.23);
-    --color-destructive-foreground: oklch(98% 0.007 264.54);
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 100%;
 
-    --color-border: oklch(26% 0.022 285.94);
-    --color-input: oklch(26% 0.022 285.94);
-    --color-ring: oklch(56% 0.247 265.75);
+  --border: 217 33% 24%;
+  --input: 217 33% 22%;
+  --ring: 263 70% 55%;
 
-    /* Purple accent colors for dark mode */
-    --color-purple: oklch(70% 0.25 300);
-    --color-purple-light: oklch(80% 0.2 300);
-    --color-purple-dark: oklch(60% 0.3 300);
-  }
+  /* Purple accent colors for dark mode */
+  --color-purple: oklch(70% 0.25 300);
+  --color-purple-light: oklch(80% 0.2 300);
+  --color-purple-dark: oklch(60% 0.3 300);
 }
 
 * {
-  border-color: var(--color-border);
+  border-color: hsl(var(--border));
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
   font-feature-settings: "rlig" 1, "calt" 1;
 }
 
@@ -95,9 +93,9 @@ html {
 *:focus-visible {
   outline: none;
   ring: 2px;
-  ring-color: var(--color-ring);
+  ring-color: hsl(var(--ring));
   ring-offset: 2px;
-  ring-offset-color: var(--color-background);
+  ring-offset-color: hsl(var(--background));
 }
 
 /* Reduce motion for users who prefer it */
@@ -117,15 +115,19 @@ html {
   text-wrap: balance;
 }
 
+a:not(.no-hover) {
+  transition: all 0.3s ease;
+}
+
 a:not(.no-hover):hover {
   color: var(--color-purple);
-  transition: color 0.3s ease;
+  text-decoration-color: var(--color-purple);
 }
 
 .glass {
-  background-color: color-mix(in srgb, var(--color-background) 80%, transparent);
+  background-color: color-mix(in srgb, hsl(var(--background)) 80%, transparent);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--color-border);
+  border: 1px solid hsl(var(--border));
 }
 
 .gradient-text {
@@ -134,9 +136,9 @@ a:not(.no-hover):hover {
   color: transparent;
   background-image: linear-gradient(
     90deg,
-    var(--color-primary),
+    hsl(var(--primary)),
     var(--color-purple),
-    var(--color-primary)
+    hsl(var(--primary))
   );
   background-size: 200% auto;
   animation: gradient-shift 3s ease infinite;

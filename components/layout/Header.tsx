@@ -38,10 +38,10 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'px-4 py-2 text-sm font-medium transition-colors rounded-lg',
+                    'px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg',
                     isActive
-                      ? 'bg-accent text-accent-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                      ? 'bg-purple/10 text-purple border border-purple/30'
+                      : 'text-muted-foreground hover:text-purple hover:bg-purple/10 hover:border-purple/30 border border-transparent'
                   )}
                 >
                   {item.name}
@@ -82,10 +82,10 @@ export function Header() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    'block px-4 py-2 text-sm font-medium transition-colors rounded-lg',
+                    'block px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg',
                     isActive
-                      ? 'bg-accent text-accent-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                      ? 'bg-purple/10 text-purple border border-purple/30'
+                      : 'text-muted-foreground hover:text-purple hover:bg-purple/10 hover:border-purple/30 border border-transparent'
                   )}
                 >
                   {item.name}
