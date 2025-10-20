@@ -15,7 +15,7 @@ export function HeroBackground() {
       <motion.div
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-20 dark:opacity-20"
         style={{
-          background: 'radial-gradient(circle, var(--color-purple) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(var(--color-purple)) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }}
         animate={{
@@ -33,7 +33,7 @@ export function HeroBackground() {
       <motion.div
         className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-15 dark:opacity-20"
         style={{
-          background: 'radial-gradient(circle, var(--color-primary) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }}
         animate={{
@@ -51,7 +51,7 @@ export function HeroBackground() {
       <motion.div
         className="absolute top-1/2 left-1/2 w-80 h-80 rounded-full opacity-10 dark:opacity-15"
         style={{
-          background: 'radial-gradient(circle, var(--color-purple-light) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(var(--color-purple-light)) 0%, transparent 70%)',
           filter: 'blur(50px)',
           transform: 'translate(-50%, -50%)',
         }}
@@ -70,7 +70,7 @@ export function HeroBackground() {
       <motion.div
         className="absolute top-20 left-1/4 w-32 h-32 rounded-2xl opacity-10 border border-purple"
         style={{
-          background: 'linear-gradient(135deg, var(--color-purple) 0%, transparent 100%)',
+          background: 'linear-gradient(135deg, hsl(var(--color-purple)) 0%, transparent 100%)',
           backdropFilter: 'blur(2px)',
         }}
         animate={{
@@ -87,7 +87,7 @@ export function HeroBackground() {
       <motion.div
         className="absolute bottom-32 right-1/4 w-24 h-24 rounded-full opacity-10 border border-primary"
         style={{
-          background: 'linear-gradient(135deg, var(--color-primary) 0%, transparent 100%)',
+          background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, transparent 100%)',
           backdropFilter: 'blur(2px)',
         }}
         animate={{
@@ -104,7 +104,7 @@ export function HeroBackground() {
       <motion.div
         className="absolute top-1/3 right-1/3 w-20 h-20 rounded-lg opacity-10 border border-purple-light"
         style={{
-          background: 'linear-gradient(135deg, var(--color-purple-light) 0%, transparent 100%)',
+          background: 'linear-gradient(135deg, hsl(var(--color-purple-light)) 0%, transparent 100%)',
         }}
         animate={{
           rotate: [0, 90, 0],
@@ -122,8 +122,8 @@ export function HeroBackground() {
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `
-            linear-gradient(var(--color-border) 1px, transparent 1px),
-            linear-gradient(90deg, var(--color-border) 1px, transparent 1px)
+            linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)
           `,
           backgroundSize: '60px 60px',
         }}
@@ -133,7 +133,7 @@ export function HeroBackground() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(circle at center, transparent 0%, var(--color-background) 100%)',
+          background: 'radial-gradient(circle at center, transparent 0%, hsl(var(--background)) 100%)',
         }}
       />
 
@@ -141,7 +141,7 @@ export function HeroBackground() {
       <motion.div
         className="absolute top-0 left-1/2 w-px h-full opacity-10"
         style={{
-          background: 'linear-gradient(to bottom, transparent, var(--color-purple), transparent)',
+          background: 'linear-gradient(to bottom, transparent, hsl(var(--color-purple)), transparent)',
         }}
         animate={{
           x: [-100, 100],
@@ -157,7 +157,7 @@ export function HeroBackground() {
       <motion.div
         className="absolute top-0 left-1/3 w-px h-full opacity-10"
         style={{
-          background: 'linear-gradient(to bottom, transparent, var(--color-primary), transparent)',
+          background: 'linear-gradient(to bottom, transparent, hsl(var(--primary)), transparent)',
         }}
         animate={{
           x: [100, -100],
@@ -177,7 +177,7 @@ export function HeroBackground() {
           key={i}
           className="absolute w-2 h-2 rounded-full opacity-20"
           style={{
-            background: i % 2 === 0 ? 'var(--color-purple)' : 'var(--color-primary)',
+            background: i % 2 === 0 ? 'hsl(var(--color-purple))' : 'hsl(var(--primary))',
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
           }}
