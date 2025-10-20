@@ -1,0 +1,31 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pizzaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(220,38,38);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(239,68,68);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#pizzaBg)"/>
+
+  <!-- Pizza slice icon -->
+  <g transform="translate(600,250)">
+    <!-- Crust -->
+    <path d="M -120,0 A 120,120 0 0,1 120,0 L 0,140 Z" fill="rgb(251,191,36)" opacity="0.9"/>
+    <!-- Cheese -->
+    <path d="M -100,20 A 100,100 0 0,1 100,20 L 0,130 Z" fill="rgb(254,215,170)" opacity="0.9"/>
+    <!-- Toppings -->
+    <circle cx="-40" cy="60" r="15" fill="rgb(220,38,38)"/>
+    <circle cx="30" cy="70" r="15" fill="rgb(220,38,38)"/>
+    <circle cx="-10" cy="90" r="15" fill="rgb(220,38,38)"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="64" font-weight="bold"
+        fill="white" text-anchor="middle">Pizza Falchi</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="500" font-family="Arial, sans-serif" font-size="28"
+        fill="white" opacity="0.9" text-anchor="middle">Restaurant Ordering System</text>
+</svg>

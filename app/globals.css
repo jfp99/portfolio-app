@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(9% 0.024 285.82);
+
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(9% 0.024 285.82);
+
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(9% 0.024 285.82);
+
+  --color-primary: oklch(59% 0.233 264.37);
+  --color-primary-foreground: oklch(98% 0.007 264.54);
+
+  --color-secondary: oklch(96.1% 0.007 264.54);
+  --color-secondary-foreground: oklch(18% 0.019 285.88);
+
+  --color-muted: oklch(96.1% 0.007 264.54);
+  --color-muted-foreground: oklch(52% 0.013 256.8);
+
+  --color-accent: oklch(96.1% 0.007 264.54);
+  --color-accent-foreground: oklch(18% 0.019 285.88);
+
+  --color-destructive: oklch(62% 0.257 29.23);
+  --color-destructive-foreground: oklch(98% 0.007 264.54);
+
+  --color-border: oklch(91.4% 0.013 256.07);
+  --color-input: oklch(91.4% 0.013 256.07);
+  --color-ring: oklch(59% 0.233 264.37);
+
+  /* Purple accent colors */
+  --color-purple: oklch(65% 0.25 300);
+  --color-purple-light: oklch(75% 0.2 300);
+  --color-purple-dark: oklch(55% 0.3 300);
+
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: oklch(9% 0.024 285.82);
+    --color-foreground: oklch(98% 0.007 264.54);
+
+    --color-card: oklch(9% 0.024 285.82);
+    --color-card-foreground: oklch(98% 0.007 264.54);
+
+    --color-popover: oklch(9% 0.024 285.82);
+    --color-popover-foreground: oklch(98% 0.007 264.54);
+
+    --color-primary: oklch(66% 0.252 266.29);
+    --color-primary-foreground: oklch(18% 0.019 285.88);
+
+    --color-secondary: oklch(26% 0.022 285.94);
+    --color-secondary-foreground: oklch(98% 0.007 264.54);
+
+    --color-muted: oklch(26% 0.022 285.94);
+    --color-muted-foreground: oklch(70% 0.015 257.08);
+
+    --color-accent: oklch(26% 0.022 285.94);
+    --color-accent-foreground: oklch(98% 0.007 264.54);
+
+    --color-destructive: oklch(40% 0.178 29.23);
+    --color-destructive-foreground: oklch(98% 0.007 264.54);
+
+    --color-border: oklch(26% 0.022 285.94);
+    --color-input: oklch(26% 0.022 285.94);
+    --color-ring: oklch(56% 0.247 265.75);
+
+    /* Purple accent colors for dark mode */
+    --color-purple: oklch(70% 0.25 300);
+    --color-purple-light: oklch(80% 0.2 300);
+    --color-purple-dark: oklch(60% 0.3 300);
+  }
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--color-ring);
+  ring-offset: 2px;
+  ring-offset-color: var(--color-background);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+a:not(.no-hover):hover {
+  color: var(--color-purple);
+  transition: color 0.3s ease;
+}
+
+.glass {
+  background-color: color-mix(in srgb, var(--color-background) 80%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-purple),
+    var(--color-primary)
+  );
+  background-size: 200% auto;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+.container-custom {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

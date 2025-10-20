@@ -1,0 +1,26 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(89,86,213);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(147,51,234);stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGradient)"/>
+
+  <!-- Profile Circle -->
+  <circle cx="200" cy="160" r="70" fill="url(#circleGradient)"/>
+
+  <!-- Body -->
+  <ellipse cx="200" cy="320" rx="90" ry="110" fill="url(#circleGradient)"/>
+
+  <!-- Initials -->
+  <text x="200" y="180" font-family="Arial, sans-serif" font-size="48" font-weight="bold"
+        fill="rgb(89,86,213)" text-anchor="middle">JFP</text>
+</svg>
