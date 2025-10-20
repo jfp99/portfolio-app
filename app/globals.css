@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Light mode (default) */
 @theme {
   --color-background: oklch(100% 0 0);
   --color-foreground: oklch(9% 0.024 285.82);
@@ -37,7 +38,8 @@
   --radius: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode */
+.dark {
   @theme {
     --color-background: oklch(9% 0.024 285.82);
     --color-foreground: oklch(98% 0.007 264.54);

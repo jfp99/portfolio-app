@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/Badge'
 import { AnimatedHero, AnimatedHeroItem } from '@/components/ui/AnimatedHero'
 import { AnimatedGrid, AnimatedGridItem } from '@/components/ui/AnimatedGrid'
+import { HeroBackground } from '@/components/ui/HeroBackground'
 import { getFeaturedProjects } from '@/data/projects'
 import { skillGroups } from '@/data/skills'
 
@@ -16,10 +17,11 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-20 md:py-32">
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        <HeroBackground />
         <Container>
           <AnimatedHero>
-            <div className="max-w-3xl">
+            <div className="max-w-3xl relative z-10">
               <AnimatedHeroItem>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl mb-6">
                   Hi, I'm{' '}
