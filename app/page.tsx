@@ -105,7 +105,7 @@ export default function HomePage() {
                     <div className="relative h-48 w-full overflow-hidden bg-muted">
                       <Image
                         src={project.image}
-                        alt={project.title}
+                        alt={`Screenshot of ${project.title} - ${project.category} project featuring ${project.technologies.slice(0, 3).map(t => t.name).join(', ')}`}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />
