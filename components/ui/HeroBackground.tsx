@@ -6,11 +6,14 @@ export function HeroBackground() {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
       {/* Gradient Mesh Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-purple/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-purple/10" />
+
+      {/* Light mode accent gradient */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-purple/5 dark:opacity-0" />
 
       {/* Animated Gradient Orbs */}
       <motion.div
-        className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-20"
+        className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-20 dark:opacity-20"
         style={{
           background: 'radial-gradient(circle, var(--color-purple) 0%, transparent 70%)',
           filter: 'blur(60px)',
@@ -28,7 +31,7 @@ export function HeroBackground() {
       />
 
       <motion.div
-        className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-20"
+        className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-15 dark:opacity-20"
         style={{
           background: 'radial-gradient(circle, var(--color-primary) 0%, transparent 70%)',
           filter: 'blur(60px)',
@@ -46,7 +49,7 @@ export function HeroBackground() {
       />
 
       <motion.div
-        className="absolute top-1/2 left-1/2 w-80 h-80 rounded-full opacity-15"
+        className="absolute top-1/2 left-1/2 w-80 h-80 rounded-full opacity-10 dark:opacity-15"
         style={{
           background: 'radial-gradient(circle, var(--color-purple-light) 0%, transparent 70%)',
           filter: 'blur(50px)',
