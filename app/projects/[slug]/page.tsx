@@ -6,6 +6,7 @@ import { Container } from '@/components/ui/Container'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
+import { ProjectStructuredData, BreadcrumbStructuredData } from '@/components/StructuredData'
 import { getProjectBySlug, getAllProjects } from '@/data/projects'
 import { formatDate } from '@/lib/utils'
 
@@ -52,10 +53,29 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     notFound()
   }
 
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Projects', url: '/projects' },
+    { name: project.title, url: `/projects/${project.slug}` }
+  ]
+
+  const techNames = project.technologies.map(t => t.name)
+
   return (
-    <div className="py-20 md:py-32">
-      <Container>
-        {/* Back Button */}
+    <>
+      <ProjectStructuredData
+        name={project.title}
+        description={project.description}
+        image={project.image}
+        url={`/projects/${project.slug}`}
+        datePublished={project.date.toISOString()}
+        author="Jean-Francois Pruvost"
+        technologies={techNames}
+      />
+      <BreadcrumbStructuredData items={breadcrumbs} />
+      <div className="py-20 md:py-32">
+        <Container>
+          {/* Back Button */}
         <Button asChild variant="ghost" className="mb-8">
           <Link href="/projects">
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -248,5 +268,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </div>
       </Container>
     </div>
+    </>
   )
 }

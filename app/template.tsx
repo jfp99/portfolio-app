@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 const pageVariants = {
   initial: {
@@ -12,7 +12,7 @@ const pageVariants = {
     y: 0,
     transition: {
       duration: 0.4,
-      ease: 'easeOut',
+      ease: [0.42, 0, 1, 1], // easeOut as bezier curve
     },
   },
   exit: {
@@ -20,18 +20,27 @@ const pageVariants = {
     y: -20,
     transition: {
       duration: 0.3,
-      ease: 'easeIn',
+      ease: [0.42, 0, 0.58, 1], // easeIn as bezier curve
     },
   },
 }
 
+// Reduced motion variants
+const reducedPageVariants = {
+  initial: { opacity: 1 },
+  animate: { opacity: 1 },
+  exit: { opacity: 1 },
+}
+
 export default function Template({ children }: { children: React.ReactNode }) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
       initial="initial"
       animate="animate"
       exit="exit"
-      variants={pageVariants}
+      variants={shouldReduceMotion ? reducedPageVariants : pageVariants}
     >
       {children}
     </motion.div>

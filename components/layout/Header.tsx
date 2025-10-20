@@ -21,8 +21,16 @@ export function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <Container>
+    <>
+      {/* Skip to main content link for keyboard users */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:bg-purple focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:ring-2 focus:ring-purple focus:ring-offset-2"
+      >
+        Skip to main content
+      </a>
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <Container>
         <nav className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -96,5 +104,6 @@ export function Header() {
         )}
       </Container>
     </header>
+    </>
   )
 }

@@ -42,3 +42,9 @@ context/
 *.psd
 *.sketch
 *.fig
+
+# Build info
+*.tsbuildinfo
+
+# Claude Code local settings
+.claude/

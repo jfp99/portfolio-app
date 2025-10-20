@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Container } from '@/components/ui/Container'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
 import { ContactForm } from '@/components/forms/ContactForm'
+import { FAQStructuredData } from '@/components/StructuredData'
 import { Mail, MapPin, Send } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -11,8 +12,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-20 md:py-32">
-      <Container>
+    <>
+      <FAQStructuredData />
+      <div className="py-20 md:py-32">
+        <Container>
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
@@ -147,5 +150,6 @@ export default function ContactPage() {
         </div>
       </Container>
     </div>
+    </>
   )
 }

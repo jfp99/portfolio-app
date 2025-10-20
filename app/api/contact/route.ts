@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { contactFormSchema } from '@/lib/validation'
 import { sanitizeString } from '@/lib/utils'
+import { sendContactEmail } from '@/lib/email'
 
 // Simple in-memory rate limiting (for production, use Redis or Vercel KV)
 const rateLimit = new Map<string, { count: number; resetTime: number }>()
@@ -73,41 +74,49 @@ export async function POST(request: NextRequest) {
       message: sanitizeString(message),
     }
 
-    // TODO: Send email using your preferred service
-    // For now, just log the message
+    // Log submission for monitoring
     console.log('[CONTACT FORM] New submission:', {
-      ...sanitizedData,
+      name: sanitizedData.name,
+      email: sanitizedData.email,
+      subject: sanitizedData.subject,
       ip,
       timestamp: new Date().toISOString(),
     })
 
-    // Example: SendGrid
-    // await sendEmail({
-    //   to: process.env.EMAIL_TO!,
-    //   from: process.env.EMAIL_FROM!,
-    //   subject: `Portfolio Contact: ${sanitizedData.subject}`,
-    //   html: `
-    //     <h2>New Contact Form Submission</h2>
-    //     <p><strong>Name:</strong> ${sanitizedData.name}</p>
-    //     <p><strong>Email:</strong> ${sanitizedData.email}</p>
-    //     <p><strong>Subject:</strong> ${sanitizedData.subject}</p>
-    //     <p><strong>Message:</strong></p>
-    //     <p>${sanitizedData.message.replace(/\n/g, '<br>')}</p>
-    //   `
-    // })
+    // Send email using Resend
+    const emailResult = await sendContactEmail(sanitizedData)
 
-    // Example: Resend
-    // const { data, error } = await resend.emails.send({
-    //   from: process.env.EMAIL_FROM!,
-    //   to: process.env.EMAIL_TO!,
-    //   subject: `Portfolio Contact: ${sanitizedData.subject}`,
-    //   html: `...`
-    // })
+    // Handle email sending result
+    if (!emailResult.success) {
+      // If email service is not configured (development mode)
+      if (emailResult.isDevelopment) {
+        console.warn('⚠️ Running in development mode without email configuration')
+        return NextResponse.json(
+          {
+            success: true,
+            message: 'Development mode: Message logged but not sent.',
+            development: true,
+          },
+          { status: 200 }
+        )
+      }
 
+      // Email sending failed
+      console.error('❌ Failed to send email:', emailResult.error)
+      return NextResponse.json(
+        {
+          error: 'Failed to send message. Please try again or email directly.',
+        },
+        { status: 500 }
+      )
+    }
+
+    // Email sent successfully
+    console.log('✅ Email sent successfully:', emailResult.messageId)
     return NextResponse.json(
       {
         success: true,
-        message: 'Message sent successfully! You will receive a response soon.',
+        message: 'Message sent successfully! I will respond within 24-48 hours.',
       },
       { status: 200 }
     )

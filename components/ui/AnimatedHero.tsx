@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { ReactNode } from 'react'
 
 const containerVariants = {
@@ -31,10 +31,23 @@ const itemVariants = {
   },
 }
 
+// Reduced motion variants - no animations
+const reducedContainerVariants = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1 },
+}
+
+const reducedItemVariants = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1 },
+}
+
 export function AnimatedHero({ children }: { children: ReactNode }) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
-      variants={containerVariants}
+      variants={shouldReduceMotion ? reducedContainerVariants : containerVariants}
       initial="hidden"
       animate="visible"
     >
@@ -44,8 +57,10 @@ export function AnimatedHero({ children }: { children: ReactNode }) {
 }
 
 export function AnimatedHeroItem({ children }: { children: ReactNode }) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
-    <motion.div variants={itemVariants}>
+    <motion.div variants={shouldReduceMotion ? reducedItemVariants : itemVariants}>
       {children}
     </motion.div>
   )

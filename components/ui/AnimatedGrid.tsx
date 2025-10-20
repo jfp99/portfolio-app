@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { ReactNode } from 'react'
 
 const containerVariants = {
@@ -31,16 +31,29 @@ const itemVariants = {
   },
 }
 
+// Reduced motion variants - no animations
+const reducedContainerVariants = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1 },
+}
+
+const reducedItemVariants = {
+  hidden: { opacity: 1 },
+  visible: { opacity: 1 },
+}
+
 interface AnimatedGridProps {
   children: ReactNode
   className?: string
 }
 
 export function AnimatedGrid({ children, className }: AnimatedGridProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
       className={className}
-      variants={containerVariants}
+      variants={shouldReduceMotion ? reducedContainerVariants : containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-100px' }}
@@ -51,8 +64,10 @@ export function AnimatedGrid({ children, className }: AnimatedGridProps) {
 }
 
 export function AnimatedGridItem({ children }: { children: ReactNode }) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
-    <motion.div variants={itemVariants}>
+    <motion.div variants={shouldReduceMotion ? reducedItemVariants : itemVariants}>
       {children}
     </motion.div>
   )
