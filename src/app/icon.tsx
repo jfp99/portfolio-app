@@ -23,43 +23,48 @@ export default function Icon() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#7C3AED" />
-              <stop offset="100%" stopColor="#F97316" />
-            </linearGradient>
-          </defs>
-          {/* Bottom layer */}
-          <rect
-            x="2"
-            y="10"
-            width="20"
-            height="20"
-            rx="4"
-            fill="#7C3AED"
-            opacity="0.6"
+          {/* Leaf shape - Spinach green */}
+          <path
+            d="M16 4C9 4 4 10 4 16C4 19 5.5 21.5 8 23C11 25 13.5 25 16 24C18.5 25 21 25 24 23C26.5 21.5 28 19 28 16C28 10 23 4 16 4Z"
+            fill="#16a34a"
           />
-          {/* Middle layer */}
-          <rect
-            x="5"
-            y="6"
-            width="20"
-            height="20"
-            rx="4"
-            fill="#9F5AED"
-            opacity="0.8"
+          {/* Central vein */}
+          <path
+            d="M16 6V24"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            opacity="0.3"
           />
-          {/* Top layer */}
-          <rect
-            x="8"
-            y="2"
-            width="20"
-            height="20"
-            rx="4"
-            fill="url(#grad1)"
+          {/* Side veins */}
+          <path
+            d="M16 10L10 14"
+            stroke="white"
+            strokeWidth="1"
+            strokeLinecap="round"
+            opacity="0.2"
           />
-          {/* Center node */}
-          <circle cx="18" cy="12" r="3" fill="white" opacity="0.9" />
+          <path
+            d="M16 10L22 14"
+            stroke="white"
+            strokeWidth="1"
+            strokeLinecap="round"
+            opacity="0.2"
+          />
+          <path
+            d="M16 15L9 18"
+            stroke="white"
+            strokeWidth="1"
+            strokeLinecap="round"
+            opacity="0.2"
+          />
+          <path
+            d="M16 15L23 18"
+            stroke="white"
+            strokeWidth="1"
+            strokeLinecap="round"
+            opacity="0.2"
+          />
         </svg>
       </div>
     ),
