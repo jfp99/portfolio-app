@@ -3,4 +3,7 @@ export { ServicesSection } from "./services/services-section";
 export { CaseStudiesSection } from "./case-studies/case-studies-section";
 export { AboutSection } from "./about/about-section";
 export { StatsSection } from "./stats/stats-section";
+export { StatsBar } from "./stats/stats-bar";
 export { CTASection } from "./cta/cta-section";
+export { TestimonialsSection } from "./testimonials/testimonials-section";
+export { SkillsConstellation } from "./skills/skills-constellation";

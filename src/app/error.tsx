@@ -39,8 +39,8 @@ export default function Error({ error, reset }: ErrorProps) {
           onClick={reset}
           className={cn(
             "inline-flex items-center gap-2 rounded-lg px-6 py-3",
-            "gradient-brand text-white font-medium",
-            "transition-opacity hover:opacity-90",
+            "bg-spinach-600 text-white font-medium",
+            "transition-colors hover:bg-spinach-700",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           )}
         >

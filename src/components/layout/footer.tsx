@@ -22,14 +22,14 @@ export function Footer() {
               href="/"
               className="inline-flex items-center gap-2 text-xl font-bold"
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-brand">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-spinach-600">
                 <Zap className="h-5 w-5 text-white" aria-hidden="true" />
               </div>
-              <span>Stack MCP</span>
+              <span>EPNR</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Expert MCP server development and AI automation solutions. Building
-              production-ready integrations for Claude and enterprise systems.
+              AI agents and workflow automation that work 24/7. From custom builds
+              to ready-made templates, I help you automate what matters.
             </p>
             {/* Social Links */}
             <div className="mt-6 flex gap-3">
@@ -116,7 +116,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Stack MCP Super Agents. All rights reserved.
+            &copy; {currentYear} EPNR Automation Studio. All rights reserved.
           </p>
           <p className="flex items-center gap-1 text-sm text-muted-foreground">
             Built with{" "}

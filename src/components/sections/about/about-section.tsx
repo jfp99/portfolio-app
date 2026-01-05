@@ -26,36 +26,34 @@ export function AboutSection() {
               id="about-heading"
               className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl"
             >
-              Building the Future of{" "}
-              <span className="text-gradient-brand">AI Integration</span>
+              AI Agents That{" "}
+              <span className="text-spinach-500 dark:text-spinach-400">Work While You Sleep</span>
             </h2>
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
-                I&apos;m a developer specialized in creating intelligent systems
-                that bridge the gap between AI capabilities and real-world
-                business needs. My focus is on the Model Context Protocol (MCP)
-                ecosystem and AI automation solutions.
+                I build AI agents that automate the tedious parts of running a
+                business. From qualifying leads to processing invoices to
+                responding to emails &mdash; my agents handle it 24/7.
               </p>
               <p>
-                With a strong foundation in full-stack development and a passion
-                for AI, I help businesses leverage cutting-edge technology to
-                streamline operations, reduce manual work, and unlock new
-                possibilities.
+                Using platforms like n8n and Make, combined with Claude and GPT,
+                I create workflow automations that actually work in production.
+                No hype, just practical solutions that save time and money.
               </p>
               <p>
-                Every project I take on is an opportunity to push the boundaries
-                of what&apos;s possible with AI integration, always with a focus
-                on delivering production-ready, maintainable solutions.
+                Whether you need a custom agent built from scratch or want to
+                deploy one of my ready-made templates, I&apos;m here to help
+                you automate what matters.
               </p>
             </div>
 
             {/* Highlights */}
             <div className="mt-8 space-y-3">
               {[
-                "12+ production MCP servers deployed",
-                "Expert in Claude API and AI agent development",
-                "Full-stack Next.js & TypeScript specialist",
-                "Passionate about clean, maintainable code",
+                "10+ AI agents deployed in production",
+                "n8n & Make automation expert",
+                "Custom agents + ready-made templates",
+                "Claude, GPT, and local LLM integration",
               ].map((highlight) => (
                 <div
                   key={highlight}

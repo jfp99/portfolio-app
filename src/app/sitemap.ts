@@ -3,7 +3,7 @@ import { caseStudies } from "@/data/case-studies";
 import { blogPosts } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stackmcp.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://epnr.dev";
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "motion/react";
-import { cn } from "@/lib/utils";
+import { useRef } from "react";
+import { motion } from "motion/react";
 import { staggerContainer, staggerItem } from "@/lib/animations";
+import { useAnimatedCounter } from "@/hooks/use-animated-counter";
 import { stats } from "@/data/skills";
 
 function AnimatedCounter({
@@ -13,30 +13,9 @@ function AnimatedCounter({
   value: string;
   suffix?: string;
 }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const numericValue = parseInt(value.replace(/[^0-9]/g, ""), 10);
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let startTime: number;
-    const duration = 2000;
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(easeOutQuart * numericValue));
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [isInView, numericValue]);
+  const ref = useRef<HTMLElement>(null);
+  const numericValue = parseInt(value.replace(/[^0-9]/g, ""), 10) || 0;
+  const count = useAnimatedCounter(ref, { end: numericValue, duration: 2000 });
 
   return (
     <span ref={ref}>
@@ -70,7 +49,7 @@ export function StatsSection() {
                 variants={staggerItem}
                 className="text-center"
               >
-                <div className="text-4xl font-bold text-gradient-brand sm:text-5xl">
+                <div className="text-4xl font-bold text-spinach-500 dark:text-spinach-400 sm:text-5xl">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="mt-2 text-muted-foreground">{stat.label}</div>

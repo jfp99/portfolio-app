@@ -23,10 +23,10 @@ interface Props {
 }
 
 const categoryColors: Record<string, string> = {
-  "mcp-server": "bg-violet-500/10 text-violet-500 border-violet-500/20",
-  "ai-automation": "bg-blue-500/10 text-blue-500 border-blue-500/20",
-  "web-app": "bg-green-500/10 text-green-500 border-green-500/20",
-  platform: "bg-orange-500/10 text-orange-500 border-orange-500/20",
+  "mcp-server": "bg-spinach-500/10 text-spinach-600 dark:text-spinach-400 border-spinach-500/20",
+  "ai-automation": "bg-spinach-500/10 text-spinach-600 dark:text-spinach-400 border-spinach-500/20",
+  "web-app": "bg-muted text-foreground border-border",
+  platform: "bg-muted text-foreground border-border",
 };
 
 const categoryLabels: Record<string, string> = {
@@ -105,8 +105,8 @@ export function CaseStudyDetail({ caseStudy }: Props) {
                 rel="noopener noreferrer"
                 className={cn(
                   "inline-flex items-center gap-2 rounded-lg px-4 py-2",
-                  "gradient-brand text-white",
-                  "transition-opacity hover:opacity-90"
+                  "bg-spinach-600 hover:bg-spinach-700 text-white",
+                  "transition-colors"
                 )}
               >
                 <ExternalLink className="h-4 w-4" aria-hidden="true" />
@@ -140,7 +140,7 @@ export function CaseStudyDetail({ caseStudy }: Props) {
           className="mt-12"
         >
           <div className="aspect-video overflow-hidden rounded-2xl border border-border bg-muted">
-            <div className="flex h-full items-center justify-center gradient-brand opacity-10" />
+            <div className="flex h-full items-center justify-center bg-spinach-500/10" />
           </div>
         </motion.div>
 
@@ -251,7 +251,7 @@ export function CaseStudyDetail({ caseStudy }: Props) {
                 variants={staggerItem}
                 className="rounded-xl border border-border bg-card p-6 text-center"
               >
-                <div className="text-3xl font-bold text-gradient-brand">
+                <div className="text-3xl font-bold text-spinach-500 dark:text-spinach-400">
                   {result.value}
                 </div>
                 <div className="mt-1 font-medium">{result.metric}</div>
@@ -272,7 +272,7 @@ export function CaseStudyDetail({ caseStudy }: Props) {
             viewport={{ once: true }}
             className="mt-12"
           >
-            <div className="rounded-2xl gradient-brand p-8 text-white">
+            <div className="rounded-2xl bg-spinach-600 p-8 text-white">
               <blockquote className="text-lg italic">
                 &ldquo;{caseStudy.testimonial.quote}&rdquo;
               </blockquote>

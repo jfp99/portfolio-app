@@ -3,18 +3,22 @@ import {
   ServicesSection,
   CaseStudiesSection,
   AboutSection,
-  StatsSection,
+  StatsBar,
   CTASection,
+  TestimonialsSection,
+  SkillsConstellation,
 } from "@/components/sections";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <StatsBar />
       <ServicesSection />
+      <SkillsConstellation />
       <CaseStudiesSection />
+      <TestimonialsSection />
       <AboutSection />
-      <StatsSection />
       <CTASection />
     </>
   );

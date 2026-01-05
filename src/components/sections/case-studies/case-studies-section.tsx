@@ -1,23 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { staggerContainer, staggerItem, cardHover } from "@/lib/animations";
+import { staggerContainer, staggerItem } from "@/lib/animations";
 import { featuredCaseStudies } from "@/data/case-studies";
+import { ProjectTiltCard } from "@/components/ui/tilt-card";
 
 const categoryColors: Record<string, string> = {
-  "mcp-server": "bg-violet-500/10 text-violet-500 border-violet-500/20",
-  "ai-automation": "bg-blue-500/10 text-blue-500 border-blue-500/20",
-  "web-app": "bg-green-500/10 text-green-500 border-green-500/20",
-  platform: "bg-orange-500/10 text-orange-500 border-orange-500/20",
+  "ai-automation": "bg-spinach-500/10 text-spinach-600 dark:text-spinach-400 border-spinach-500/30",
+  "web-app": "bg-muted text-foreground border-border",
+  platform: "bg-muted text-foreground border-border",
 };
 
 const categoryLabels: Record<string, string> = {
-  "mcp-server": "MCP Server",
-  "ai-automation": "AI Automation",
+  "ai-automation": "AI Agent",
   "web-app": "Web App",
   platform: "Platform",
 };
@@ -75,17 +73,12 @@ export function CaseStudiesSection() {
             <motion.article
               key={caseStudy.id}
               variants={staggerItem}
-              whileHover="hover"
-              initial="rest"
               className={cn(index === 0 && "md:col-span-2")}
             >
-              <motion.div variants={cardHover}>
+              <ProjectTiltCard featured={index === 0}>
                 <Link
                   href={`/case-studies/${caseStudy.slug}`}
-                  className={cn(
-                    "group block overflow-hidden rounded-2xl border border-border bg-card",
-                    "transition-colors hover:border-primary/50"
-                  )}
+                  className="group block"
                 >
                   <div
                     className={cn(
@@ -96,16 +89,37 @@ export function CaseStudiesSection() {
                     {/* Image Placeholder */}
                     <div
                       className={cn(
-                        "relative aspect-video overflow-hidden rounded-xl bg-muted",
+                        "relative aspect-video overflow-hidden rounded-xl bg-muted/50 border border-spinach-500/20",
                         index === 0 && "md:aspect-[4/3]"
                       )}
                     >
-                      <div className="absolute inset-0 flex items-center justify-center gradient-brand opacity-10" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-4xl font-bold text-muted-foreground/20">
-                          {caseStudy.title.charAt(0)}
-                        </span>
+                      {/* Decorative Circuit Pattern */}
+                      <div className="absolute inset-0 opacity-10">
+                        <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                          <defs>
+                            <pattern id={`circuit-${caseStudy.id}`} patternUnits="userSpaceOnUse" width="20" height="20">
+                              <circle cx="10" cy="10" r="1" fill="currentColor" className="text-spinach-500"/>
+                              <line x1="10" y1="10" x2="20" y2="10" stroke="currentColor" className="text-spinach-500" strokeWidth="0.5"/>
+                              <line x1="10" y1="10" x2="10" y2="20" stroke="currentColor" className="text-spinach-500" strokeWidth="0.5"/>
+                            </pattern>
+                          </defs>
+                          <rect width="100" height="100" fill={`url(#circuit-${caseStudy.id})`}/>
+                        </svg>
                       </div>
+
+                      {/* Center Icon */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-spinach-600 shadow-lg shadow-black/10">
+                          <Sparkles className="h-8 w-8 text-white" />
+                        </div>
+                      </div>
+
+                      {/* Featured Badge */}
+                      {index === 0 && (
+                        <div className="absolute top-4 right-4 rounded-full bg-spinach-500 px-3 py-1 text-xs font-medium text-white">
+                          Featured
+                        </div>
+                      )}
                     </div>
 
                     {/* Content */}
@@ -120,7 +134,7 @@ export function CaseStudiesSection() {
                         {categoryLabels[caseStudy.category]}
                       </span>
 
-                      <h3 className="mt-4 text-xl font-semibold group-hover:text-primary sm:text-2xl">
+                      <h3 className="mt-4 text-xl font-semibold transition-colors group-hover:text-spinach-600 dark:group-hover:text-spinach-400 sm:text-2xl">
                         {caseStudy.title}
                       </h3>
                       <p className="mt-1 text-sm text-muted-foreground">
@@ -135,7 +149,7 @@ export function CaseStudiesSection() {
                         {caseStudy.technologies.slice(0, 4).map((tech) => (
                           <span
                             key={tech}
-                            className="rounded-md bg-muted px-2 py-1 text-xs font-medium"
+                            className="rounded-md bg-spinach-500/10 border border-spinach-500/20 px-2 py-1 text-xs font-medium text-spinach-600 dark:text-spinach-400"
                           >
                             {tech}
                           </span>
@@ -151,7 +165,7 @@ export function CaseStudiesSection() {
                       <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
                         {caseStudy.results.slice(0, index === 0 ? 4 : 2).map((result) => (
                           <div key={result.metric}>
-                            <div className="text-lg font-bold text-primary">
+                            <div className="text-lg font-bold text-spinach-500 dark:text-spinach-400">
                               {result.value}
                             </div>
                             <div className="text-xs text-muted-foreground">
@@ -163,7 +177,7 @@ export function CaseStudiesSection() {
 
                       {/* Links */}
                       <div className="mt-6 flex items-center gap-4">
-                        <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:underline">
+                        <span className="inline-flex items-center gap-1 text-sm font-medium text-spinach-600 dark:text-spinach-400 group-hover:underline">
                           View case study
                           <ArrowRight
                             className="h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -201,7 +215,7 @@ export function CaseStudiesSection() {
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </ProjectTiltCard>
             </motion.article>
           ))}
         </motion.div>

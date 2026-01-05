@@ -47,7 +47,7 @@ export function BlogIndex() {
               <div className="grid lg:grid-cols-2">
                 {/* Image */}
                 <div className="aspect-video bg-muted lg:aspect-auto lg:h-full">
-                  <div className="flex h-full items-center justify-center gradient-brand opacity-20" />
+                  <div className="flex h-full items-center justify-center bg-spinach-500/10" />
                 </div>
                 {/* Content */}
                 <div className="p-8 lg:p-12">
@@ -108,7 +108,7 @@ export function BlogIndex() {
                 >
                   {/* Image */}
                   <div className="aspect-video bg-muted">
-                    <div className="flex h-full items-center justify-center gradient-brand opacity-20" />
+                    <div className="flex h-full items-center justify-center bg-spinach-500/10" />
                   </div>
                   {/* Content */}
                   <div className="p-6">
@@ -168,8 +168,8 @@ export function BlogIndex() {
             <button
               type="submit"
               className={cn(
-                "rounded-lg gradient-brand px-6 py-3 font-medium text-white",
-                "transition-opacity hover:opacity-90"
+                "rounded-lg bg-spinach-600 hover:bg-spinach-700 px-6 py-3 font-medium text-white",
+                "transition-colors"
               )}
             >
               Subscribe

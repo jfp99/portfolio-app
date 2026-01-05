@@ -15,7 +15,7 @@ export function CTASection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl gradient-brand p-8 text-center text-white sm:p-16"
+          className="relative overflow-hidden rounded-3xl bg-spinach-600 p-8 text-center text-white sm:p-16"
         >
           {/* Background Pattern */}
           <div className="absolute inset-0 -z-10 opacity-10">
@@ -29,11 +29,12 @@ export function CTASection() {
           </div>
 
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Ready to Transform Your Workflow?
+            Ready to Automate?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
-            Let&apos;s discuss how MCP servers and AI automation can help you
-            save time, reduce errors, and focus on what matters most.
+            Let&apos;s discuss which workflows you can automate. Whether you need
+            a custom AI agent or a ready-to-deploy template, I&apos;ll help you
+            get results faster.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

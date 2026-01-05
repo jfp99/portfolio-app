@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Server, Bot, Code, Lightbulb, ArrowRight } from "lucide-react";
+import { Bot, Package, Settings, Lightbulb, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { staggerContainer, staggerItem, cardHover } from "@/lib/animations";
 import { services } from "@/data/services";
 
-const iconMap: Record<string, typeof Server> = {
-  server: Server,
+const iconMap: Record<string, typeof Bot> = {
   bot: Bot,
-  code: Code,
+  package: Package,
+  settings: Settings,
   lightbulb: Lightbulb,
 };
 
@@ -33,11 +33,11 @@ export function ServicesSection() {
             id="services-heading"
             className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl"
           >
-            What I Can Build For You
+            AI Agents That Work For You
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            From MCP servers to full-stack applications, I deliver solutions
-            that leverage AI to transform your business operations.
+            From custom agents to ready-made templates, I help you automate
+            workflows and scale your business with intelligent AI solutions.
           </p>
         </motion.div>
 
@@ -69,7 +69,7 @@ export function ServicesSection() {
                   <div
                     className={cn(
                       "inline-flex h-12 w-12 items-center justify-center rounded-xl",
-                      "gradient-brand"
+                      "bg-spinach-600"
                     )}
                   >
                     {Icon && (

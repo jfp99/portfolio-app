@@ -10,12 +10,11 @@ import {
   ArrowRight,
   MessageSquare,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem } from "@/lib/animations";
 
 const benefits = [
-  "Discuss your project requirements",
-  "Get expert advice on MCP & AI solutions",
+  "Discuss your automation needs",
+  "Get expert advice on AI agents",
   "Receive a tailored proposal",
   "No commitment required",
 ];
@@ -53,11 +52,11 @@ export function BookingContent() {
           </span>
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Let&apos;s Discuss Your{" "}
-            <span className="text-gradient-brand">Project</span>
+            <span className="text-spinach-500 dark:text-spinach-400">Project</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Schedule a free consultation to explore how MCP servers and AI
-            automation can transform your workflow.
+            Schedule a free consultation to explore how AI agents can automate
+            your workflows and save you hours every week.
           </p>
         </motion.div>
 
@@ -208,7 +207,7 @@ export function BookingContent() {
               },
               {
                 q: "How long does a typical project take?",
-                a: "It depends on the scope. MCP servers can be built in days, while full applications may take weeks to months.",
+                a: "It depends on the scope. Simple agents can be deployed in 1-2 weeks, while complex custom solutions may take 3-4 weeks.",
               },
               {
                 q: "Do you work with international clients?",

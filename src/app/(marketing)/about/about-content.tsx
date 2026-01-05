@@ -18,22 +18,22 @@ import { skillCategories } from "@/data/skills";
 
 const timeline = [
   {
-    year: "2024",
-    title: "MCP & AI Automation Focus",
+    year: "2025",
+    title: "AI Agents & Automation Studio",
     description:
-      "Discovered the Model Context Protocol and dove deep into building MCP servers. Created multiple production-ready integrations for Claude and AI automation workflows.",
+      "Launched EPNR Automation Studio, focusing on building custom AI agents and ready-to-deploy templates. Helping businesses automate workflows with n8n, Make, and AI integrations.",
   },
   {
     year: "2024",
-    title: "First Production Apps",
+    title: "AI Automation Deep Dive",
     description:
-      "Built my first real-world applications: a restaurant management system and a recruitment platform. Learning by doing and shipping.",
+      "Went deep into workflow automation and AI agents. Built production agents for lead qualification, email triage, invoice processing, and more. Mastered n8n and Make platforms.",
   },
   {
     year: "2023",
     title: "Development Journey Begins",
     description:
-      "Started learning modern web development with React, Next.js, and TypeScript. Fell in love with building things that solve real problems.",
+      "Started learning modern web development with React, Next.js, and TypeScript. Discovered the power of automation to solve real business problems.",
   },
 ];
 
@@ -74,7 +74,7 @@ export function AboutPageContent() {
           {/* Left - Image */}
           <motion.div variants={fadeInLeft} className="relative">
             <div className="aspect-square overflow-hidden rounded-3xl bg-muted">
-              <div className="flex h-full items-center justify-center gradient-brand opacity-20" />
+              <div className="flex h-full items-center justify-center bg-spinach-500/20" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-8xl font-bold text-muted-foreground/20">
                   JFP
@@ -83,8 +83,8 @@ export function AboutPageContent() {
             </div>
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 rounded-2xl border border-border bg-card p-4 shadow-lg">
-              <div className="text-3xl font-bold text-gradient-brand">5+</div>
-              <div className="text-sm text-muted-foreground">MCP Servers Built</div>
+              <div className="text-3xl font-bold text-spinach-500 dark:text-spinach-400">10+</div>
+              <div className="text-sm text-muted-foreground">AI Agents Deployed</div>
             </div>
           </motion.div>
 
@@ -94,20 +94,21 @@ export function AboutPageContent() {
               About Me
             </span>
             <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Building the Future of{" "}
-              <span className="text-gradient-brand">AI Integration</span>
+              Building AI Agents That{" "}
+              <span className="text-spinach-500 dark:text-spinach-400">Actually Work</span>
             </h1>
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
-                I&apos;m a developer who discovered my passion through MCP (Model
-                Context Protocol) and AI automation. What started as curiosity
-                quickly became an obsession with building tools that make AI
-                genuinely useful.
+                I build AI agents that handle the repetitive work so you don&apos;t
+                have to. From lead qualification to email triage to invoice
+                processing &mdash; my agents work 24/7, never take breaks, and
+                never complain.
               </p>
               <p>
-                Still early in my journey, but I&apos;ve shipped real projects and
-                built MCP servers that actually work in production. I learn fast,
-                ship faster, and I&apos;m always looking to take on new challenges.
+                Using n8n, Make, and AI models like Claude and GPT, I create
+                practical automation solutions that save real time and money.
+                Whether you need a custom agent or a ready-to-deploy template,
+                I&apos;ve got you covered.
               </p>
             </div>
 
@@ -159,8 +160,8 @@ export function AboutPageContent() {
                 href="/contact"
                 className={cn(
                   "inline-flex items-center gap-2 rounded-lg px-6 py-3",
-                  "gradient-brand text-white font-medium",
-                  "transition-opacity hover:opacity-90"
+                  "bg-spinach-600 text-white font-medium",
+                  "transition-colors hover:bg-spinach-700"
                 )}
               >
                 Get In Touch
@@ -278,7 +279,7 @@ export function AboutPageContent() {
                   <div className="absolute left-[39px] top-16 h-full w-px bg-border" />
                 )}
                 {/* Year Badge */}
-                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl gradient-brand text-white font-bold">
+                <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-spinach-600 text-white font-bold">
                   {item.year}
                 </div>
                 {/* Content */}
@@ -351,14 +352,15 @@ export function AboutPageContent() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="rounded-3xl gradient-brand p-8 text-center text-white sm:p-16"
+            className="rounded-3xl bg-spinach-600 p-8 text-center text-white sm:p-16"
           >
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Let&apos;s Build Something Amazing
+              Ready to Automate?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-              Ready to transform your ideas into reality? I&apos;m here to help
-              you leverage AI and automation to achieve your goals.
+              Let&apos;s discuss which workflows you can automate. Whether you need
+              a custom AI agent or want to deploy a ready-made template, I&apos;m
+              here to help.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link

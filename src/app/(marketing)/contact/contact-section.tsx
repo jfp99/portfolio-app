@@ -8,35 +8,32 @@ import { z } from "zod";
 import { Send, Mail, MapPin, Clock, CheckCircle2, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
+import { RippleButton } from "@/components/ui/ripple-button";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  company: z.string().optional(),
-  subject: z.enum(["mcp-development", "ai-automation", "consulting", "other"], {
-    message: "Please select a subject",
-  }),
-  message: z
-    .string()
-    .min(10, "Message must be at least 10 characters")
-    .max(1000, "Message must be less than 1000 characters"),
+  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
+  email: z.string().email("Please enter a valid email address").max(254, "Email is too long"),
+  company: z.string().max(200, "Company name is too long").optional(),
+  subject: z.string().min(5, "Subject must be at least 5 characters").max(200, "Subject must be less than 200 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters").max(10000, "Message must be less than 10,000 characters"),
+  honeypot: z.string().max(0, "Invalid submission"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-const subjects = [
-  { value: "mcp-development", label: "MCP Server Development" },
-  { value: "ai-automation", label: "AI Automation" },
-  { value: "consulting", label: "Technical Consulting" },
-  { value: "other", label: "Other" },
+const subjectOptions = [
+  { value: "Custom AI Agent", label: "Custom AI Agent" },
+  { value: "Agent Template", label: "Agent Template" },
+  { value: "Setup & Configuration", label: "Setup & Configuration" },
+  { value: "Other Inquiry", label: "Other" },
 ];
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@stackmcp.dev",
-    href: "mailto:hello@stackmcp.dev",
+    value: "contact@epnr.dev",
+    href: "mailto:contact@epnr.dev",
   },
   {
     icon: MapPin,
@@ -280,7 +277,7 @@ export function ContactSection() {
                     aria-describedby={errors.subject ? "subject-error" : undefined}
                   >
                     <option value="">Select a subject</option>
-                    {subjects.map((subject) => (
+                    {subjectOptions.map((subject) => (
                       <option key={subject.value} value={subject.value}>
                         {subject.label}
                       </option>
@@ -320,22 +317,25 @@ export function ContactSection() {
                     </p>
                   )}
                 </div>
+                {/* Honeypot - hidden field for bot detection */}
+                <input
+                  type="text"
+                  {...register("honeypot")}
+                  className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
               </div>
 
               {/* Submit */}
               <div className="mt-6">
-                <button
+                <RippleButton
                   type="submit"
                   disabled={isSubmitting}
-                  className={cn(
-                    "inline-flex w-full items-center justify-center gap-2",
-                    "h-12 rounded-lg text-base font-medium",
-                    "gradient-brand text-white",
-                    "transition-all duration-200",
-                    "hover:opacity-90 hover:shadow-lg hover:shadow-primary/25",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
-                    "disabled:cursor-not-allowed disabled:opacity-50"
-                  )}
+                  size="lg"
+                  className="w-full"
+                  rippleColor="rgba(255, 255, 255, 0.4)"
                 >
                   {isSubmitting ? (
                     <>
@@ -348,7 +348,7 @@ export function ContactSection() {
                       Send Message
                     </>
                   )}
-                </button>
+                </RippleButton>
               </div>
 
               {/* Status Messages */}

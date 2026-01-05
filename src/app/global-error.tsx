@@ -7,7 +7,7 @@ interface GlobalErrorProps {
   reset: () => void;
 }
 
-export default function GlobalError({ error, reset }: GlobalErrorProps) {
+export default function GlobalError({ reset }: GlobalErrorProps) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-slate-950 text-slate-50 flex items-center justify-center">

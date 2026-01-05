@@ -7,27 +7,18 @@ import { ArrowRight, ExternalLink, Github, Filter } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { fadeInUp, staggerContainer, staggerItem, cardHover } from "@/lib/animations";
 import { caseStudies } from "@/data/case-studies";
-import type { CaseStudy } from "@/types";
 
 const categories = [
-  { value: "all", label: "All Projects" },
-  { value: "mcp-server", label: "MCP Servers" },
-  { value: "web-app", label: "Web Apps" },
-  { value: "platform", label: "Platforms" },
+  { value: "all", label: "All Agents" },
+  { value: "ai-automation", label: "AI Agents" },
 ];
 
 const categoryColors: Record<string, string> = {
-  "mcp-server": "bg-violet-500/10 text-violet-500 border-violet-500/20",
-  "ai-automation": "bg-blue-500/10 text-blue-500 border-blue-500/20",
-  "web-app": "bg-green-500/10 text-green-500 border-green-500/20",
-  platform: "bg-orange-500/10 text-orange-500 border-orange-500/20",
+  "ai-automation": "bg-spinach-500/10 text-spinach-600 dark:text-spinach-400 border-spinach-500/30",
 };
 
 const categoryLabels: Record<string, string> = {
-  "mcp-server": "MCP Server",
-  "ai-automation": "AI Automation",
-  "web-app": "Web App",
-  platform: "Platform",
+  "ai-automation": "AI Agent",
 };
 
 export function CaseStudiesIndex() {
@@ -58,8 +49,8 @@ export function CaseStudiesIndex() {
             Case Studies
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            A collection of projects showcasing MCP server development, AI
-            automation solutions, and full-stack applications.
+            Real AI agents I&apos;ve built for clients. Each one solves a specific
+            business problem and runs in production 24/7.
           </p>
         </motion.div>
 
@@ -79,7 +70,7 @@ export function CaseStudiesIndex() {
                 "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium",
                 "transition-all duration-200",
                 activeFilter === category.value
-                  ? "gradient-brand text-white"
+                  ? "bg-spinach-600 text-white"
                   : "border border-border bg-card hover:border-primary/50"
               )}
             >
@@ -99,7 +90,7 @@ export function CaseStudiesIndex() {
           className="mt-12 grid gap-8 md:grid-cols-2"
         >
           <AnimatePresence mode="popLayout">
-            {filteredCaseStudies.map((caseStudy, index) => (
+            {filteredCaseStudies.map((caseStudy) => (
               <motion.article
                 key={caseStudy.id}
                 variants={staggerItem}
@@ -120,7 +111,7 @@ export function CaseStudiesIndex() {
                     <div className="p-6">
                       {/* Image Placeholder */}
                       <div className="relative aspect-video overflow-hidden rounded-xl bg-muted">
-                        <div className="absolute inset-0 flex items-center justify-center gradient-brand opacity-10" />
+                        <div className="absolute inset-0 flex items-center justify-center bg-spinach-500/10" />
                         <div className="absolute inset-0 flex items-center justify-center">
                           <span className="text-6xl font-bold text-muted-foreground/20">
                             {caseStudy.title.charAt(0)}

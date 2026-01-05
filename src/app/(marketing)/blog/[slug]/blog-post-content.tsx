@@ -84,7 +84,7 @@ export function BlogPostContent({ post }: Props) {
           className="mt-10"
         >
           <div className="aspect-video overflow-hidden rounded-2xl bg-muted">
-            <div className="flex h-full items-center justify-center gradient-brand opacity-20" />
+            <div className="flex h-full items-center justify-center bg-spinach-500/10" />
           </div>
         </motion.div>
 
@@ -166,7 +166,7 @@ export function BlogPostContent({ post }: Props) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-12 rounded-2xl gradient-brand p-8 text-center text-white"
+          className="mt-12 rounded-2xl bg-spinach-600 p-8 text-center text-white"
         >
           <h2 className="text-2xl font-bold">Ready to Work Together?</h2>
           <p className="mt-2 text-white/80">

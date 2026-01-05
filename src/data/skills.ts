@@ -2,25 +2,25 @@ import type { SkillCategory, Stat } from "@/types";
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: "Languages & Frameworks",
+    category: "AI & Agents",
+    skills: [
+      { name: "AI Agents", level: "expert" },
+      { name: "n8n", level: "expert" },
+      { name: "Make (Integromat)", level: "advanced" },
+      { name: "Claude API", level: "advanced" },
+      { name: "OpenAI API", level: "advanced" },
+      { name: "MCP Protocol", level: "advanced" },
+    ],
+  },
+  {
+    category: "Development",
     skills: [
       { name: "TypeScript", level: "advanced" },
-      { name: "JavaScript", level: "advanced" },
       { name: "React", level: "advanced" },
       { name: "Next.js", level: "advanced" },
       { name: "Node.js", level: "intermediate" },
       { name: "Python", level: "intermediate" },
-    ],
-  },
-  {
-    category: "AI & Automation",
-    skills: [
-      { name: "MCP Protocol", level: "expert" },
-      { name: "Claude API", level: "expert" },
-      { name: "n8n", level: "advanced" },
-      { name: "OpenAI API", level: "intermediate" },
-      { name: "LangChain", level: "intermediate" },
-      { name: "AI Agents", level: "advanced" },
+      { name: "REST APIs", level: "advanced" },
     ],
   },
   {
@@ -30,42 +30,42 @@ export const skillCategories: SkillCategory[] = [
       { name: "PostgreSQL", level: "intermediate" },
       { name: "Supabase", level: "advanced" },
       { name: "Vercel", level: "advanced" },
-      { name: "AWS", level: "intermediate" },
-      { name: "Redis", level: "intermediate" },
+      { name: "Railway", level: "intermediate" },
+      { name: "Webhooks", level: "advanced" },
     ],
   },
   {
-    category: "Tools & DevOps",
+    category: "Tools",
     skills: [
+      { name: "Claude Code", level: "expert" },
       { name: "Git", level: "advanced" },
       { name: "Docker", level: "intermediate" },
-      { name: "CI/CD", level: "intermediate" },
-      { name: "Playwright", level: "intermediate" },
-      { name: "Vitest", level: "intermediate" },
-      { name: "Claude Code", level: "expert" },
+      { name: "Notion API", level: "advanced" },
+      { name: "Slack API", level: "advanced" },
+      { name: "Airtable", level: "intermediate" },
     ],
   },
 ];
 
 export const stats: Stat[] = [
   {
-    value: "5",
-    label: "MCP Servers Built",
+    value: "10",
+    label: "AI Agents Deployed",
     suffix: "+",
   },
   {
-    value: "4",
-    label: "Projects Shipped",
-    suffix: "",
+    value: "5",
+    label: "Agent Templates",
+    suffix: "+",
   },
   {
     value: "50",
-    label: "Productivity Boost",
+    label: "Time Saved",
     suffix: "%",
   },
   {
-    value: "10",
-    label: "Hours Saved Weekly",
-    suffix: "h",
+    value: "24",
+    label: "Automation",
+    suffix: "/7",
   },
 ];

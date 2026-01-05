@@ -201,7 +201,7 @@ export function ServicesPageContent() {
           </span>
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             What I Can{" "}
-            <span className="text-gradient-brand">Build For You</span>
+            <span className="text-spinach-500 dark:text-spinach-400">Build For You</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
             I specialize in MCP servers and AI automation - giving Claude direct
@@ -238,14 +238,14 @@ export function ServicesPageContent() {
                 )}
               >
                 {service.popular && (
-                  <div className="absolute -top-3 left-8 rounded-full gradient-brand px-4 py-1 text-xs font-medium text-white">
+                  <div className="absolute -top-3 left-8 rounded-full bg-spinach-600 px-4 py-1 text-xs font-medium text-white">
                     Most Popular
                   </div>
                 )}
 
                 {/* Header */}
                 <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl gradient-brand">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-spinach-600">
                     <service.icon className="h-7 w-7 text-white" aria-hidden="true" />
                   </div>
                   <div>
@@ -297,8 +297,8 @@ export function ServicesPageContent() {
                     href="/contact"
                     className={cn(
                       "inline-flex items-center gap-2 rounded-lg px-5 py-2.5",
-                      "gradient-brand text-white font-medium",
-                      "transition-opacity hover:opacity-90"
+                      "bg-spinach-600 hover:bg-spinach-700 text-white font-medium",
+                      "transition-colors"
                     )}
                   >
                     Get Started
@@ -399,7 +399,7 @@ export function ServicesPageContent() {
                   <div className="absolute left-1/2 top-10 hidden h-px w-full bg-border lg:block" />
                 )}
                 <div className="relative rounded-2xl border border-border bg-card p-6 text-center">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full gradient-brand text-2xl font-bold text-white">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-spinach-600 text-2xl font-bold text-white">
                     {step.step}
                   </div>
                   <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
@@ -469,7 +469,7 @@ export function ServicesPageContent() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="rounded-3xl gradient-brand p-8 text-center text-white sm:p-16"
+          className="rounded-3xl bg-spinach-600 p-8 text-center text-white sm:p-16"
         >
           <h2 className="text-3xl font-bold sm:text-4xl">
             Ready to Get Started?

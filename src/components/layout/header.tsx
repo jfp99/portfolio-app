@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 import { mainNavigation } from "@/data/navigation";
 import { ThemeToggle } from "./theme-toggle";
-import { LogoMark } from "@/components/brand/logo";
+import { Logo } from "@/components/brand/logo";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,10 +28,9 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold transition-colors hover:opacity-80"
+          className="flex items-center transition-transform hover:scale-105"
         >
-          <LogoMark size={36} />
-          <span className="hidden sm:inline">Stack MCP</span>
+          <Logo size="lg" showText={true} animated={false} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -63,9 +62,9 @@ export function Header() {
             className={cn(
               "hidden sm:inline-flex items-center justify-center",
               "h-10 px-5 text-sm font-medium rounded-lg",
-              "gradient-brand text-white",
-              "transition-all duration-200",
-              "hover:opacity-90 hover:shadow-lg hover:shadow-primary/25",
+              "bg-spinach-600 text-white",
+              "transition-colors duration-200",
+              "hover:bg-spinach-700",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             )}
           >
@@ -127,8 +126,8 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
                   "block mt-4 px-4 py-3 text-center text-base font-medium rounded-lg",
-                  "gradient-brand text-white",
-                  "transition-opacity hover:opacity-90"
+                  "bg-spinach-600 text-white",
+                  "transition-colors hover:bg-spinach-700"
                 )}
               >
                 Book a Call
