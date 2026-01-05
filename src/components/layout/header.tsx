@@ -40,7 +40,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                "px-4 py-2 text-sm font-medium rounded-xl transition-colors",
                 isActiveLink(item.href)
                   ? "text-primary bg-primary/10"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -61,7 +61,7 @@ export function Header() {
             href="/booking"
             className={cn(
               "hidden sm:inline-flex items-center justify-center",
-              "h-10 px-5 text-sm font-medium rounded-lg",
+              "h-11 px-5 text-sm font-medium rounded-xl",
               "bg-spinach-600 text-white",
               "transition-colors duration-200",
               "hover:bg-spinach-700",
@@ -75,7 +75,7 @@ export function Header() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={cn(
-              "inline-flex h-10 w-10 items-center justify-center rounded-lg md:hidden",
+              "inline-flex h-11 w-11 items-center justify-center rounded-xl md:hidden",
               "border border-border bg-background",
               "transition-colors hover:bg-muted",
               "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
@@ -111,7 +111,7 @@ export function Header() {
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={cn(
-                    "block px-4 py-3 text-base font-medium rounded-lg transition-colors",
+                    "block px-4 py-3 text-base font-medium rounded-xl transition-colors",
                     isActiveLink(item.href)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -125,7 +125,7 @@ export function Header() {
                 href="/booking"
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  "block mt-4 px-4 py-3 text-center text-base font-medium rounded-lg",
+                  "block mt-4 px-4 py-3 text-center text-base font-medium rounded-xl",
                   "bg-spinach-600 text-white",
                   "transition-colors hover:bg-spinach-700"
                 )}

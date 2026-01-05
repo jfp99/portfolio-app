@@ -17,7 +17,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="relative inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-background transition-colors"
+        className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background transition-colors"
         aria-label="Toggle theme"
       >
         <span className="h-5 w-5 animate-pulse rounded bg-muted" />
@@ -31,7 +31,7 @@ export function ThemeToggle() {
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
-        "relative inline-flex h-10 w-10 items-center justify-center rounded-lg",
+        "relative inline-flex h-11 w-11 items-center justify-center rounded-xl",
         "border border-border bg-background",
         "transition-all duration-200",
         "hover:bg-muted hover:border-primary/50",

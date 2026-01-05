@@ -42,7 +42,7 @@ export function CTASection() {
               href="/booking"
               className={cn(
                 "group inline-flex items-center justify-center gap-2",
-                "h-12 px-8 text-base font-medium rounded-lg",
+                "h-12 px-8 text-base font-medium rounded-xl",
                 "bg-white text-primary",
                 "transition-all duration-200",
                 "hover:bg-white/90 hover:shadow-lg",
@@ -60,7 +60,7 @@ export function CTASection() {
               href="/contact"
               className={cn(
                 "inline-flex items-center justify-center gap-2",
-                "h-12 px-8 text-base font-medium rounded-lg",
+                "h-12 px-8 text-base font-medium rounded-xl",
                 "border-2 border-white/30 bg-transparent",
                 "transition-all duration-200",
                 "hover:border-white hover:bg-white/10",
