@@ -1,26 +1,28 @@
 import type { CaseStudy } from "@/types";
 import type { BlogPost } from "@/types";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stackmcp.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://epnr.dev";
 
 export function getPersonSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "JFP",
-    jobTitle: "MCP & AI Automation Developer",
+    name: "EPNR",
+    jobTitle: "AI Agents & Automation Developer",
     url: baseUrl,
     sameAs: [
       "https://github.com/jfp99",
       "https://linkedin.com/in/jfp",
     ],
     knowsAbout: [
-      "Model Context Protocol (MCP)",
-      "AI Automation",
+      "AI Agents",
+      "Workflow Automation",
+      "n8n",
+      "Make",
       "TypeScript",
       "Next.js",
-      "Python",
-      "Full-Stack Development",
+      "Claude API",
+      "OpenAI",
     ],
   };
 }
@@ -29,15 +31,16 @@ export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Stack MCP Super Agents",
+    "@id": `${baseUrl}/#organization`,
+    name: "EPNR Automation Studio",
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
     description:
-      "MCP server development and AI automation solutions. Building tools that make Claude genuinely useful.",
+      "Custom AI agents and workflow automation that work 24/7. From ready-to-deploy templates to fully tailored solutions.",
     foundingDate: "2024",
     founder: {
       "@type": "Person",
-      name: "JFP",
+      name: "EPNR",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -51,14 +54,13 @@ export function getWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Stack MCP Super Agents",
+    "@id": `${baseUrl}/#website`,
+    name: "EPNR Automation Studio",
     url: baseUrl,
     description:
-      "MCP server development and AI automation solutions. Building tools that make Claude genuinely useful.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${baseUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
+      "Custom AI agents and workflow automation that work 24/7. Automate what matters.",
+    publisher: {
+      "@id": `${baseUrl}/#organization`,
     },
   };
 }
@@ -71,11 +73,11 @@ export function getCaseStudySchema(caseStudy: CaseStudy) {
     description: caseStudy.description,
     author: {
       "@type": "Person",
-      name: "JFP",
+      name: "EPNR",
     },
     publisher: {
       "@type": "Organization",
-      name: "Stack MCP Super Agents",
+      name: "EPNR Automation Studio",
       url: baseUrl,
     },
     mainEntityOfPage: {
@@ -98,7 +100,7 @@ export function getBlogPostSchema(post: BlogPost) {
     },
     publisher: {
       "@type": "Organization",
-      name: "Stack MCP Super Agents",
+      name: "EPNR Automation Studio",
       url: baseUrl,
     },
     datePublished: post.publishedAt,
@@ -114,14 +116,14 @@ export function getServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "MCP Server Development",
+    name: "AI Agents & Workflow Automation",
     provider: {
       "@type": "Organization",
-      name: "Stack MCP Super Agents",
+      name: "EPNR Automation Studio",
     },
     description:
-      "Custom MCP server development for Claude and enterprise AI integrations.",
+      "Custom AI agents and workflow automation using n8n, Make, Claude, and GPT.",
     areaServed: "Worldwide",
-    serviceType: "Software Development",
+    serviceType: "AI Automation Development",
   };
 }
